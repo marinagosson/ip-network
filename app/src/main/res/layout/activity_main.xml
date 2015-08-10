@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_inicial" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adView"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/ipv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="IPV4"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextIpv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ipv4"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignStart="@+id/ipv4"
+                android:layout_below="@+id/ipv4"
+                android:digits="0123456789."
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mascara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextIpv4"
+                android:text="Máscara"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextMascara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/editTextIpv4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/editTextIpv4"
+                android:layout_below="@+id/mascara"
+                android:layout_marginBottom="10dp"
+                android:digits="0123456789."
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/start_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editTextMascara"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Informações da Rede"
+                android:textColor="#1976D2"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ipDecimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/start_one"
+                android:text="Número decimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextIpDecimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ipBinario"
+                android:layout_alignLeft="@+id/ipv4"
+                android:layout_below="@+id/ipDecimal"
+                android:layout_toLeftOf="@+id/start_decimal_binario"
+                android:layout_toStartOf="@+id/start_decimal_binario"
+                android:digits="0123456789."
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:maxLength="10"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/start_decimal_binario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ipDecimal"
+                android:lines="1"
+                android:text="D/B"
+                android:textColor="#1976D2"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ipBinario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/start_decimal_binario"
+                android:layout_marginTop="10dp"
+                android:text="Número binário"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextIpBinario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/start_binario_decimal"
+                android:layout_alignEnd="@+id/editTextIpDecimal"
+                android:layout_alignLeft="@+id/ipv4"
+                android:layout_alignRight="@+id/editTextIpDecimal"
+                android:layout_below="@+id/ipBinario"
+                android:digits="01."
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/start_binario_decimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/ipBinario"
+                android:layout_toEndOf="@+id/editTextIpDecimal"
+                android:layout_toRightOf="@+id/editTextIpDecimal"
+                android:lines="1"
+                android:text="B/D"
+                android:textColor="#1976D2"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+
+</RelativeLayout>

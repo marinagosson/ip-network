@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IP Network</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="converter_decimal_em_binario">Converter o número decimal em binário</string>
+    <string name="converter_binario_decimal">Converter o número binário em  decimal</string>
+
+    <!-- Admob-->
+    <string name="banner_ad_unit_id">ca-app-pub-4132849082162115/3042439981</string>
+
+
+</resources>
